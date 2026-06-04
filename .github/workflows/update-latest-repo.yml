@@ -2,7 +2,7 @@ name: Update Latest Repository
 
 on:
   schedule:
-    - cron: "0 */6 * * *" # every 6 hours
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -11,16 +11,19 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get latest repository
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Update latest repository
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: rahul-527
+          USERNAME: rahul-527   # <-- Replace with your GitHub username
         run: |
+          # Get the latest updated repo
           REPO=$(curl -s \
             -H "Authorization: Bearer $GH_TOKEN" \
             "https://api.github.com/users/$USERNAME/repos?sort=updated&per_page=1" \
@@ -33,26 +36,16 @@ jobs:
 
           CONTENT="### 🚀 [$REPO](https://github.com/$USERNAME/$REPO)\n\n$DESC"
 
-          awk -v content="$CONTENT" '
-          /<!-- LATEST_REPO_START -->/ {
-            print;
-            print content;
-            skip=1;
-            next
-          }
-          /<!-- LATEST_REPO_END -->/ {
-            skip=0
-          }
-          !skip
-          ' README.md > README.tmp
+          # Replace content in README.md
+          sed -i '/<!-- LATEST_REPO_START -->/,/<!-- LATEST_REPO_END -->/c\
+<!-- LATEST_REPO_START -->\
+'"$CONTENT"'\
+<!-- LATEST_REPO_END -->' README.md
 
-          mv README.tmp README.md
-
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add README.md
           git diff --staged --quiet || git commit -m "Update latest repository"
           git push
