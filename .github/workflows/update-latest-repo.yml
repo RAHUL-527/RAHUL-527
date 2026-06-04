@@ -36,7 +36,7 @@ jobs:
 
           # Replace content between markers safely using sed
           ESCAPED_CONTENT=$(echo "$README_CONTENT" | sed 's_/_\\/_g')
-          sed -i "/<!-- LATEST_REPO_START -->/,/<!-- LATEST_REPO_END -->/c\\
+          sed -i "/<!-- LATEST_REPO_START -->/,/<!-- LATEST_REPO_END -->/c\\<!-- LATEST_REPO_START -->\\$ESCAPED_CONTENT\\<!-- LATEST_REPO_END -->" README.md
 
       - name: Commit and push changes
         run: |
