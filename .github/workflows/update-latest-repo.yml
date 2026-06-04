@@ -1,0 +1,58 @@
+name: Update Latest Repository
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get latest repository
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: YOUR_GITHUB_USERNAME
+        run: |
+          REPO=$(curl -s \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/users/$USERNAME/repos?sort=updated&per_page=1" \
+            | jq -r '.[0].name')
+
+          DESC=$(curl -s \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/$USERNAME/$REPO" \
+            | jq -r '.description // "No description available"')
+
+          CONTENT="### 🚀 [$REPO](https://github.com/$USERNAME/$REPO)\n\n$DESC"
+
+          awk -v content="$CONTENT" '
+          /<!-- LATEST_REPO_START -->/ {
+            print;
+            print content;
+            skip=1;
+            next
+          }
+          /<!-- LATEST_REPO_END -->/ {
+            skip=0
+          }
+          !skip
+          ' README.md > README.tmp
+
+          mv README.tmp README.md
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+          git diff --staged --quiet || git commit -m "Update latest repository"
+          git push
