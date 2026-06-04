@@ -2,7 +2,7 @@ name: Update Latest Repository
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */6 * * *" # every 6 hours
   workflow_dispatch:
 
 permissions:
@@ -11,36 +11,38 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
 
-      - name: Update latest repository
+      - name: Get latest repository info
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: RAHUL-527   # <-- Replace with your GitHub username
+          USERNAME: rahul-527   # <--- your username
         run: |
-          # Get the latest updated repo
-          REPO=$(curl -s \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            "https://api.github.com/users/$USERNAME/repos?sort=updated&per_page=1" \
-            | jq -r '.[0].name')
+          echo "Fetching latest repository..."
+          
+          LATEST_REPO_JSON=$(curl -s -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/users/$USERNAME/repos?sort=updated&per_page=1")
 
-          DESC=$(curl -s \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            "https://api.github.com/repos/$USERNAME/$REPO" \
-            | jq -r '.description // "No description available"')
+          REPO_NAME=$(echo "$LATEST_REPO_JSON" | jq -r '.[0].name')
+          REPO_DESC=$(echo "$LATEST_REPO_JSON" | jq -r '.[0].description // "No description available"')
+          REPO_URL="https://github.com/$USERNAME/$REPO_NAME"
 
-          CONTENT="### 🚀 [$REPO](https://github.com/$USERNAME/$REPO)\n\n$DESC"
+          echo "Latest repo: $REPO_NAME"
 
-          # Replace content in README.md
-          sed -i '/<!-- LATEST_REPO_START -->/,/<!-- LATEST_REPO_END -->/c\
-<!-- LATEST_REPO_START -->\
-'"$CONTENT"'\
-<!-- LATEST_REPO_END -->' README.md
+          # Safely encode content for README
+          README_CONTENT="### 🚀 [$REPO_NAME]($REPO_URL)\n\n$REPO_DESC"
+
+          # Replace content between markers
+          # Using perl for safer multi-line replacement
+          perl -0777 -i -pe 's/<!-- LATEST_REPO_START -->.*?<!-- LATEST_REPO_END -->/<!-- LATEST_REPO_START -->\n'"$README_CONTENT"'\n<!-- LATEST_REPO_END -->/gs' README.md
 
       - name: Commit and push changes
         run: |
