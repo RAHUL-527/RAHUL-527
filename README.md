@@ -180,6 +180,8 @@ No description available
 
 <img src="https://github-profile-trophy.vercel.app/?username=rahul-527&theme=radical&column=4&no-frame=true&margin-w=15&margin-h=15"/>
 
+<img src="https://github-profile-trophy.vercel.app/?username=rahul-527&theme=radical&row=2&column=4" />
+
 </div>
 
 ---
