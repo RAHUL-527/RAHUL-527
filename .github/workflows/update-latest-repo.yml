@@ -19,7 +19,7 @@ jobs:
       - name: Get latest repository
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: YOUR_GITHUB_USERNAME
+          USERNAME: rahul-527
         run: |
           REPO=$(curl -s \
             -H "Authorization: Bearer $GH_TOKEN" \
