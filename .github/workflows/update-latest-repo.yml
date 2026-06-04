@@ -1,12 +1,47 @@
-name: Test Workflow
+name: Update Latest Repository
 
 on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  test:
+  update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello
-        run: echo "Workflow works"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Get latest repository and update README
+        env:
+          USERNAME: rahul-527
+        run: |
+          # Get latest updated repo
+          LATEST=$(curl -s "https://api.github.com/users/$USERNAME/repos?sort=updated&per_page=1" | jq -r '.[0]')
+          REPO_NAME=$(echo "$LATEST" | jq -r '.name')
+          REPO_DESC=$(echo "$LATEST" | jq -r '.description // "No description available"')
+          REPO_URL="https://github.com/$USERNAME/$REPO_NAME"
+
+          echo "Latest repo: $REPO_NAME"
+
+          # Prepare README content
+          README_CONTENT="### 🚀 [$REPO_NAME]($REPO_URL)\n\n$REPO_DESC"
+
+          # Replace content between markers safely using sed
+          ESCAPED_CONTENT=$(echo "$README_CONTENT" | sed 's_/_\\/_g')
+          sed -i "/<!-- LATEST_REPO_START -->/,/<!-- LATEST_REPO_END -->/c\\
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || git commit -m "Update latest repository"
+          git push
