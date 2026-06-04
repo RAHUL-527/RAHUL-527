@@ -158,6 +158,9 @@
 <!-- LATEST_REPO_START -->
 Loading latest repository...
 <!-- LATEST_REPO_END -->
+<!-- LATEST_REPO_START -->
+$ESCAPED_CONTENT
+<!-- LATEST_REPO_END -->
 <a href="https://github.com/rahul-527/YOUR_REPOSITORY_1">
 <img src="https://github-readme-stats.vercel.app/api/pin/?username=rahul-527&repo=rahul-527/Portfolio&theme=synthwave&hide_border=true"/>
 </a>
