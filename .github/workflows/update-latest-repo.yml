@@ -1,4 +1,4 @@
-name: Update Latest Repository Pro
+name: Update Latest Repositories Pro
 
 on:
   schedule:
@@ -21,42 +21,38 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y jq curl
 
-      - name: Fetch latest non-fork repo info
+      - name: Fetch latest 5 non-fork repos
         env:
           USERNAME: rahul-527
         run: |
-          # Get latest non-fork repo
           RESPONSE=$(curl -s "https://api.github.com/users/$USERNAME/repos?sort=updated&per_page=100")
-          LATEST_REPO=$(echo "$RESPONSE" | jq -r '[.[] | select(.fork==false)][0]')
 
-          REPO_NAME=$(echo "$LATEST_REPO" | jq -r '.name')
-          REPO_DESC=$(echo "$LATEST_REPO" | jq -r '.description // "No description available"')
-          REPO_URL="https://github.com/$USERNAME/$REPO_NAME"
-          REPO_LANG=$(echo "$LATEST_REPO" | jq -r '.language // "N/A"')
-          REPO_STARS=$(echo "$LATEST_REPO" | jq -r '.stargazers_count')
-          REPO_FORKS=$(echo "$LATEST_REPO" | jq -r '.forks_count')
+          echo "$RESPONSE" | jq -r '[.[] | select(.fork==false)] | .[:5] | .[] |
+          "\(.name)|\(.description // "No description")|\(.language // "N/A")|\(.stargazers_count)|\(.forks_count)|\(.html_url)"' \
+          > repos.txt
 
-          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
-          echo "REPO_DESC=$REPO_DESC" >> $GITHUB_ENV
-          echo "REPO_URL=$REPO_URL" >> $GITHUB_ENV
-          echo "REPO_LANG=$REPO_LANG" >> $GITHUB_ENV
-          echo "REPO_STARS=$REPO_STARS" >> $GITHUB_ENV
-          echo "REPO_FORKS=$REPO_FORKS" >> $GITHUB_ENV
-
-      - name: Update README with badges
+      - name: Update README with 5 repos
         run: |
-          BADGES="![Language](https://img.shields.io/badge/language-$REPO_LANG-blue?style=for-the-badge&logo=github) ![Stars](https://img.shields.io/github/stars/$USERNAME/$REPO_NAME?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/$USERNAME/$REPO_NAME?style=for-the-badge)"
-          
-          # Replace content between markers
-          awk -v name="$REPO_NAME" -v desc="$REPO_DESC" -v url="$REPO_URL" -v badges="$BADGES" '
+          OUTPUT=""
+
+          while IFS="|" read -r NAME DESC LANG STARS FORKS URL
+          do
+            OUTPUT="$OUTPUT### 🚀 [$NAME]($URL)
+
+$DESC
+
+![Language](https://img.shields.io/badge/language-$LANG-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/$NAME?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/$NAME?style=for-the-badge)
+
+---
+
+"
+          done < repos.txt
+
+          awk -v content="$OUTPUT" '
           BEGIN {inside=1}
           /<!-- LATEST_REPO_START -->/ {
             print;
-            print "### 🚀 [" name "](" url ")";
-            print "";
-            print desc;
-            print "";
-            print badges;
+            print content;
             inside=0;
             next
           }
@@ -72,6 +68,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add README.md
-          git diff --staged --quiet || git commit -m "Update latest repo with badges"
+          git diff --staged --quiet || git commit -m "Update top 5 latest repos"
           git push
