@@ -1,21 +1,12 @@
-name: Update Latest Repository
+name: Test Workflow
 
 on:
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  update-readme:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Get latest repo
-        env:
-          USERNAME: rahul-527
-        run: |
-          echo "Testing workflow"
+      - name: Hello
+        run: echo "Workflow works"
