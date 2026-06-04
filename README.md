@@ -155,6 +155,8 @@
 ### 🚀 [RAHUL-527](https://github.com/rahul-527/RAHUL-527)
 
 No description available
+
+![Language](https://img.shields.io/badge/language-N/A-blue?style=for-the-badge&logo=github) ![Stars](https://img.shields.io/github/stars//RAHUL-527?style=for-the-badge) ![Forks](https://img.shields.io/github/forks//RAHUL-527?style=for-the-badge)
 <!-- LATEST_REPO_END -->
 
 </div>
