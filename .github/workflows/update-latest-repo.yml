@@ -49,7 +49,7 @@ jobs:
           
           # Replace content between markers
           awk -v name="$REPO_NAME" -v desc="$REPO_DESC" -v url="$REPO_URL" -v badges="$BADGES" '
-          BEGIN {inside=5}
+          BEGIN {inside=1}
           /<!-- LATEST_REPO_START -->/ {
             print;
             print "### 🚀 [" name "](" url ")";
