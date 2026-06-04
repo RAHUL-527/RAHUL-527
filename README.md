@@ -2,7 +2,7 @@
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=280&color=0:00F5FF,50:7B2FFF,100:FF00FF&text=RAHUL%20R&fontSize=70&fontColor=FFFFFF&animation=twinkling&fontAlignY=38"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=30&duration=2500&pause=800&color=00F5FF&center=true&vCenter=true&width=1000&lines=SOFTWARE+ENGINEER;FULL+STACK+DEVELOPER;AI+%26+ML+ENTHUSIAST;OPEN+SOURCE+CONTRIBUTOR;BUILDING+THE+FUTURE" />
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=30&duration=2500&pause=800&color=00F5FF&center=true&vCenter=true&width=1000&lines=SOFTWARE+DEVELOPER;FULL+STACK+DEVELOPER;AI+%26+ML+ENTHUSIAST;OPEN+SOURCE+CONTRIBUTOR;BUILDING+THE+FUTURE" />
 
 <br>
 
@@ -10,7 +10,8 @@
 
 <img src="https://img.shields.io/github/followers/rahul-527?label=FOLLOWERS&style=for-the-badge&color=7B2FFF"/>
 
-<img src="https://img.shields.io/github/stars/rahul-527?style=for-the-badge&color=FF00FF"/>
+<!-- <img src="https://img.shields.io/github/stars/rahul-527?style=for-the-badge&color=FF00FF"/> -->
+<img src="https://img.shields.io/github/stars/rahul-527?label=STARS&style=for-the-badge&color=FF00FF"/>
 
 </div>
 
@@ -18,7 +19,7 @@
 
 # ⚡ Profile
 
-<img align="right" width="400" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnQ0NWx1MTNhc2dmaGdxNDd0ZDY5YmdyYnUzZjBxamM4NWhia2FkYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78XCFBGOlS6keY1Bil/giphy.gif"/>
+<img align="right" width="320" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnQ0NWx1MTNhc2dmaGdxNDd0ZDY5YmdyYnUzZjBxamM4NWhia2FkYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78XCFBGOlS6keY1Bil/giphy.gif"/>
 
 <div align="justify">
 
@@ -90,7 +91,7 @@
 
 ### Backend
 
-<img src="https://skillicons.dev/icons?i=django,flask,mediapipe,opencv&theme=dark"/>
+<img src="https://skillicons.dev/icons?i=django,flask&theme=dark"/>
 
 ### Databases
 
@@ -112,17 +113,9 @@
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=rahul-527&show_icons=true&theme=synthwave&hide_border=true"/>
-
 <img height="180em" src="https://streak-stats.demolab.com?user=rahul-527&theme=synthwave&hide_border=true"/>
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahul-527&layout=compact&theme=synthwave&hide_border=true"/>
-
 </div>
-
----
-
-# 📈 Advanced GitHub Analytics
 
 <div align="center">
 
@@ -146,7 +139,10 @@
 
 <div align="center">
 
-[![Rahul's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=rahul-527&theme=tokyo-night)](https://github.com/ashutosh00710/github-readme-activity-graph)
+<!-- [![Rahul's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=rahul-527&theme=tokyo-night)](https://github.com/ashutosh00710/github-readme-activity-graph) -->
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=rahul-527&theme=tokyo-night"/>
+
 
 </div>
 
@@ -158,13 +154,6 @@
 <!-- LATEST_REPO_START -->
 Loading latest repository...
 <!-- LATEST_REPO_END -->
-<a href="https://github.com/rahul-527/YOUR_REPOSITORY_1">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=rahul-527&repo=rahul-527/Portfolio&theme=synthwave&hide_border=true"/>
-</a>
-
-<a href="https://github.com/rahul-527/YOUR_REPOSITORY_2">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=rahul-527&repo=YOUR_REPOSITORY_2&theme=synthwave&hide_border=true"/>
-</a>
 
 </div>
 
