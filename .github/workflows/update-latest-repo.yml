@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install dependencies
@@ -21,38 +21,39 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y jq curl
 
-      - name: Fetch latest 5 non-fork repos
+      - name: Fetch latest 5 non-fork repositories
         env:
           USERNAME: rahul-527
         run: |
-          RESPONSE=$(curl -s "https://api.github.com/users/$USERNAME/repos?sort=updated&per_page=100")
-
-          echo "$RESPONSE" | jq -r '[.[] | select(.fork==false)] | .[:5] | .[] |
-          "\(.name)|\(.description // "No description")|\(.language // "N/A")|\(.stargazers_count)|\(.forks_count)|\(.html_url)"' \
+          curl -s "https://api.github.com/users/$USERNAME/repos?per_page=100&sort=updated" \
+          | jq -r '[.[] | select(.fork==false)] | .[:5] | .[] |
+          "\(.name)|\(.description // "No description available")|\(.language // "N/A")|\(.stargazers_count)|\(.forks_count)|\(.html_url)"' \
           > repos.txt
 
-      - name: Update README with 5 repos
+      - name: Build README block
         run: |
-          OUTPUT=""
+          rm -f block.md
+          touch block.md
 
           while IFS="|" read -r NAME DESC LANG STARS FORKS URL
           do
-            OUTPUT="$OUTPUT### 🚀 [$NAME]($URL)
-
-$DESC
-
-![Language](https://img.shields.io/badge/language-$LANG-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/$NAME?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/$NAME?style=for-the-badge)
-
----
-
-"
+            echo "### 🚀 [$NAME]($URL)" >> block.md
+            echo "" >> block.md
+            echo "$DESC" >> block.md
+            echo "" >> block.md
+            echo "![Language](https://img.shields.io/badge/language-$LANG-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/$NAME?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/$NAME?style=for-the-badge)" >> block.md
+            echo "" >> block.md
+            echo "---" >> block.md
+            echo "" >> block.md
           done < repos.txt
 
-          awk -v content="$OUTPUT" '
+      - name: Inject block into README
+        run: |
+          awk '
           BEGIN {inside=1}
           /<!-- LATEST_REPO_START -->/ {
             print;
-            print content;
+            system("cat block.md");
             inside=0;
             next
           }
@@ -70,5 +71,5 @@ $DESC
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add README.md
-          git diff --staged --quiet || git commit -m "Update top 5 latest repos"
+          git diff --staged --quiet || git commit -m "Update top 5 latest repositories"
           git push
