@@ -21,7 +21,7 @@ jobs:
       - name: Update latest repository
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: rahul-527   # <-- Replace with your GitHub username
+          USERNAME: RAHUL-527   # <-- Replace with your GitHub username
         run: |
           # Get the latest updated repo
           REPO=$(curl -s \
