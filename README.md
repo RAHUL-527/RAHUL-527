@@ -178,7 +178,7 @@ No description available
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=rahul-527&theme=radical&column=4&no-frame=true&margin-w=15&margin-h=15"/>
+<img src="https://github-profile-trophy.vercel.app/?username=rahul-527&amp;theme=radical&amp;column=4&amp;no-frame=true&amp;margin-w=15&amp;margin-h=15"/>
 
 <img src="https://github-profile-trophy.vercel.app/?username=rahul-527&theme=radical&row=2&column=4" />
 
