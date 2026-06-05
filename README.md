@@ -2,7 +2,7 @@
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=280&color=0:00F5FF,50:7B2FFF,100:FF00FF&text=RAHUL%20R&fontSize=70&fontColor=FFFFFF&animation=twinkling&fontAlignY=38"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=30&duration=2500&pause=800&color=00F5FF&center=true&vCenter=true&width=1000&lines=SOFTWARE+DEVELOPER;FULL+STACK+DEVELOPER;AI+%26+ML+ENTHUSIAST;OPEN+SOURCE+CONTRIBUTOR;BUILDING+THE+FUTURE" />
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=30&duration=2500&pause=800&color=00F5FF&center=true&vCenter=true&width=1000&lines=SOFTWARE+DEVELOPER;FULL+STACK+DEVELOPER;AI+%26+ML+ENTHUSIAST" />
 
 <br>
 
@@ -110,12 +110,6 @@
 ---
 
 # 📊 GitHub Statistics
-
-<div align="center">
-
-<img height="180em" src="https://streak-stats.demolab.com?user=rahul-527&theme=synthwave&hide_border=true"/>
-
-</div>
 
 <div align="center">
 
