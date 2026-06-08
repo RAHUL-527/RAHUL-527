@@ -146,19 +146,19 @@
 
 <div align="center">
 <!-- LATEST_REPO_START -->
-### 🚀 [Drowsiness-Gaze-Detection-System](https://github.com/RAHUL-527/Drowsiness-Gaze-Detection-System)
-
-The Drowsiness and Gaze Detection System is a real-time Human-Monitoring system that detects driver drowsiness and gaze direction using a standard webcam. 
-
-![Language](https://img.shields.io/badge/language-Python-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/Drowsiness-Gaze-Detection-System?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/Drowsiness-Gaze-Detection-System?style=for-the-badge)
-
----
-
 ### 🚀 [RAHUL-527](https://github.com/RAHUL-527/RAHUL-527)
 
 No description available
 
 ![Language](https://img.shields.io/badge/language-N/A-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/RAHUL-527?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/RAHUL-527?style=for-the-badge)
+
+---
+
+### 🚀 [Drowsiness-Gaze-Detection-System](https://github.com/RAHUL-527/Drowsiness-Gaze-Detection-System)
+
+The Drowsiness and Gaze Detection System is a real-time Human-Monitoring system that detects driver drowsiness and gaze direction using a standard webcam. 
+
+![Language](https://img.shields.io/badge/language-Python-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/Drowsiness-Gaze-Detection-System?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/Drowsiness-Gaze-Detection-System?style=for-the-badge)
 
 ---
 
