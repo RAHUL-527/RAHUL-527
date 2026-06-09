@@ -146,7 +146,7 @@
 
 <div align="center">
 <!-- LATEST_REPO_START -->
-### 🚀 [RAHUL-527](https://github.com/RAHUL-527/RAHUL-527)
+### [RAHUL-527](https://github.com/RAHUL-527/RAHUL-527)
 
 No description available
 
@@ -154,7 +154,7 @@ No description available
 
 ---
 
-### 🚀 [Drowsiness-Gaze-Detection-System](https://github.com/RAHUL-527/Drowsiness-Gaze-Detection-System)
+### [Drowsiness-Gaze-Detection-System](https://github.com/RAHUL-527/Drowsiness-Gaze-Detection-System)
 
 The Drowsiness and Gaze Detection System is a real-time Human-Monitoring system that detects driver drowsiness and gaze direction using a standard webcam. 
 
@@ -162,7 +162,7 @@ The Drowsiness and Gaze Detection System is a real-time Human-Monitoring system 
 
 ---
 
-### 🚀 [Robust-Cursor-Interface-based-on-Hand-Gesture](https://github.com/RAHUL-527/Robust-Cursor-Interface-based-on-Hand-Gesture)
+### [Robust-Cursor-Interface-based-on-Hand-Gesture](https://github.com/RAHUL-527/Robust-Cursor-Interface-based-on-Hand-Gesture)
 
 The Robust Cursor Interface Based on Hand Gesture is a real-time Human-Computer Interaction (HCI) system that enables users to control their computer using natural hand gestures captured through a standard webcam.
 
@@ -170,7 +170,7 @@ The Robust Cursor Interface Based on Hand Gesture is a real-time Human-Computer 
 
 ---
 
-### 🚀 [Portfolio](https://github.com/RAHUL-527/Portfolio)
+### [Portfolio](https://github.com/RAHUL-527/Portfolio)
 
 No description available
 
