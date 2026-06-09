@@ -37,7 +37,7 @@ jobs:
 
           while IFS="|" read -r NAME DESC LANG STARS FORKS URL
           do
-            echo "### 🚀 [$NAME]($URL)" >> block.md
+            echo "### [$NAME]($URL)" >> block.md
             echo "" >> block.md
             echo "$DESC" >> block.md
             echo "" >> block.md
