@@ -146,19 +146,19 @@
 
 <div align="center">
 <!-- LATEST_REPO_START -->
-### [Robust-Pet-Animal-Image-Prediction-System](https://github.com/RAHUL-527/Robust-Pet-Animal-Image-Prediction-System)
-
-The Robust Pet Image Prediction System is a Deep Learning-powered image analysis application designed to detect and classify pets from static images.
-
-![Language](https://img.shields.io/badge/language-Python-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/Robust-Pet-Animal-Image-Prediction-System?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/Robust-Pet-Animal-Image-Prediction-System?style=for-the-badge)
-
----
-
 ### [RAHUL-527](https://github.com/RAHUL-527/RAHUL-527)
 
 No description available
 
 ![Language](https://img.shields.io/badge/language-N/A-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/RAHUL-527?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/RAHUL-527?style=for-the-badge)
+
+---
+
+### [Robust-Pet-Animal-Image-Prediction-System](https://github.com/RAHUL-527/Robust-Pet-Animal-Image-Prediction-System)
+
+The Robust Pet Image Prediction System is a Deep Learning-powered image analysis application designed to detect and classify pets from static images.
+
+![Language](https://img.shields.io/badge/language-Python-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/Robust-Pet-Animal-Image-Prediction-System?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/Robust-Pet-Animal-Image-Prediction-System?style=for-the-badge)
 
 ---
 
