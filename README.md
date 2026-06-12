@@ -146,6 +146,14 @@
 
 <div align="center">
 <!-- LATEST_REPO_START -->
+### [Portfolio](https://github.com/RAHUL-527/Portfolio)
+
+No description available
+
+![Language](https://img.shields.io/badge/language-CSS-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/Portfolio?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/Portfolio?style=for-the-badge)
+
+---
+
 ### [RAHUL-527](https://github.com/RAHUL-527/RAHUL-527)
 
 No description available
@@ -175,14 +183,6 @@ The Drowsiness and Gaze Detection System is a real-time Human-Monitoring system 
 The Robust Cursor Interface Based on Hand Gesture is a real-time Human-Computer Interaction (HCI) system that enables users to control their computer using natural hand gestures captured through a standard webcam.
 
 ![Language](https://img.shields.io/badge/language-Python-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/Robust-Cursor-Interface-based-on-Hand-Gesture?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/Robust-Cursor-Interface-based-on-Hand-Gesture?style=for-the-badge)
-
----
-
-### [Portfolio](https://github.com/RAHUL-527/Portfolio)
-
-No description available
-
-![Language](https://img.shields.io/badge/language-CSS-blue?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/rahul-527/Portfolio?style=for-the-badge) ![Forks](https://img.shields.io/github/forks/rahul-527/Portfolio?style=for-the-badge)
 
 ---
 
